@@ -1,5 +1,10 @@
 package one.digitalinovation.controller;
 
+import lombok.AllArgsConstructor;
+import one.digitalinovation.dto.BeerDTO;
+import one.digitalinovation.service.BeerService;
+import one.digitalinovation.exception.BeerAlreadyRegisteredException;
+import one.digitalinovation.exception.BeerNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,15 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.AllArgsConstructor;
-import one.digitalinovation.dto.BeerDTO;
-import one.digitalinovation.exception.BeerAlreadyRegisteredException;
-import one.digitalinovation.exception.BeerNotFoundException;
-import one.digitalinovation.service.BeerService;
-
-import java.util.List;
-
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/beers")
